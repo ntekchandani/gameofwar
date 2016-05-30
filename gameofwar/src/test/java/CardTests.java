@@ -8,4 +8,9 @@ public class CardTests {
     public final void whenCardCreatedWithNegativeRankThenExceptionIsThrown() {
         Card testCard = new Card(-1,1);
     }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public final void whenCardCreatedWithNegativeSuitThenExceptionIsThrown() {
+        Card testCard = new Card(1,-1);
+    }
 }
