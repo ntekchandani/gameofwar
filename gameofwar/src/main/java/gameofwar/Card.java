@@ -3,6 +3,7 @@ package gameofwar;
 public class Card {
     private int mSuit;
     private int mRank;
+    private boolean mFaceUp;
 
     public Card(int suit, int rank) throws IllegalArgumentException {
         if(suit < 0) {
@@ -15,6 +16,8 @@ public class Card {
         
         mSuit = suit;
         mRank = rank;
+        
+        mFaceUp = false;
     }
     
     public int getSuit() {
@@ -23,6 +26,14 @@ public class Card {
     
     public int getRank() {
         return mRank;
+    }
+    
+    public boolean isFaceUp() {
+        return mFaceUp;
+    }
+    
+    public void setFaceUp(boolean isFaceUp) {
+        mFaceUp = isFaceUp;
     }
     
 }

@@ -22,4 +22,17 @@ public class CardTests {
         Assert.assertEquals(1,testCard.getSuit());
         Assert.assertEquals(2,testCard.getRank());
     }
+    
+    @Test
+    public final void whenCardStateSetGetDefaultStateFaceDown() {
+        Card testCard = new Card(1,2);
+        Assert.assertEquals(false,testCard.isFaceUp());
+    }
+    
+    @Test
+    public final void whenCardStateSetGetCorrectStateBack() {
+        Card testCard = new Card(1,2);
+        testCard.setFaceUp(true);
+        Assert.assertEquals(true,testCard.isFaceUp());
+    }
 }
