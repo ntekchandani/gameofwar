@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class QueueDeck implements Deck {
 
-    public ArrayList<Card> mCards; 
+    private ArrayList<Card> mCards; 
 
     public QueueDeck() {
         super();
