@@ -60,7 +60,14 @@ public class QueueDeck implements Deck {
     /* add a card to the deck 
        this implementation will add the Card to the end of the deck */
     public void add(Card cardToAdd) {
+        if(mCards == null) {
+            mCards = new ArrayList<Card>();
+        }
         mCards.add(cardToAdd);
+    }
+    
+    public boolean isEmpty() {
+        return mCards.isEmpty();
     }
 
 }

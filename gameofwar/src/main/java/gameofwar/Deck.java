@@ -14,4 +14,6 @@ public interface Deck {
     /* add a card to the deck */
     public void add(Card cardToAdd);
 
+    /* return true if deck is empty */
+    public boolean isEmpty();
 }

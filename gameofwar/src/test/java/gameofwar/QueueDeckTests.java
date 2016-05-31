@@ -40,14 +40,14 @@ public class QueueDeckTests {
     // or a method to compare Decks could be useful for testing.
     
     @Test
-    public final void whenCallingShuffleMethodCallPasses() {
+    public final void whenCallingShuffleMethodThenCallPasses() {
         Deck testDeck = (Deck) new QueueDeck();
         testDeck.create(4,13);
         testDeck.shuffle();
     }
     
     @Test
-    public final void whenAddingNewCardMethodCallPasses() {
+    public final void whenAddingNewCardMethodThenCallPasses() {
         Deck testDeck = (Deck) new QueueDeck();
         testDeck.create(1,1);
         Card mockedCard = mock(Card.class);
@@ -55,7 +55,7 @@ public class QueueDeckTests {
     }
     
     @Test
-    public final void whenDealingAddedCardReturnedInOrder() {
+    public final void whenDealingAddedCardThenReturnedInOrder() {
         Deck testDeck = (Deck) new QueueDeck();
         testDeck.create(1,1);
         Card mockedCard = mock(Card.class);
@@ -66,6 +66,13 @@ public class QueueDeckTests {
         Card testCard = testDeck.deal();
         Assert.assertEquals(10,testCard.getSuit());
         Assert.assertEquals(11,testCard.getRank());
+    }
+    
+    @Test
+    public final void whenAddingCardToDeckWithoutCallingCreateThenCallPasses() {
+        Deck testDeck = (Deck) new QueueDeck();
+        Card mockedCard = mock(Card.class);
+        testDeck.add(mockedCard);
     }
     
 }
