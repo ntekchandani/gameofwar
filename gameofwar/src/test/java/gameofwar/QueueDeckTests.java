@@ -3,8 +3,11 @@ package gameofwar.tests;
 import org.junit.Test;
 import org.junit.Assert;
 
+import static org.mockito.Mockito.*;
+
 import gameofwar.Deck;
 import gameofwar.QueueDeck;
+import gameofwar.Card;
 
 public class QueueDeckTests {
     @Test(expected = IllegalArgumentException.class)
@@ -41,6 +44,14 @@ public class QueueDeckTests {
         Deck testDeck = (Deck) new QueueDeck();
         testDeck.create(4,13);
         testDeck.shuffle();
+    }
+    
+    @Test
+    public final void whenAddingNewCardMethodCallPasses() {
+        Deck testDeck = (Deck) new QueueDeck();
+        testDeck.create(1,1);
+        Card mockedCard = mock(Card.class);
+        testDeck.add(mockedCard);
     }
     
 }

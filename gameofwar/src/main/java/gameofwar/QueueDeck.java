@@ -60,7 +60,7 @@ public class QueueDeck implements Deck {
     /* add a card to the deck 
        this implementation will add the Card to the end of the deck */
     public void add(Card cardToAdd) {
-        throw new UnsupportedOperationException();
+        mCards.add(cardToAdd);
     }
 
 }
