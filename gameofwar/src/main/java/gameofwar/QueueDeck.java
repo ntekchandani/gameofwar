@@ -5,10 +5,11 @@ import java.util.Random;
 
 public class QueueDeck implements Deck {
 
-    private ArrayList<Card> mCards; 
+    public ArrayList<Card> mCards; 
 
     public QueueDeck() {
         super();
+        mCards = new ArrayList<Card>();
     }
 
     /* Create the deck of cards */
@@ -60,14 +61,31 @@ public class QueueDeck implements Deck {
     /* add a card to the deck 
        this implementation will add the Card to the end of the deck */
     public void add(Card cardToAdd) {
-        if(mCards == null) {
-            mCards = new ArrayList<Card>();
-        }
         mCards.add(cardToAdd);
     }
     
     public boolean isEmpty() {
         return mCards.isEmpty();
     }
+    
+    /* return deck size */
+    public int size() {
+        return mCards.size();
+    }
+    
+    /* clear the deck of all cards */
+    public void clear() {
+        mCards.clear();
+    }
+    
+    /* return the entire deck as a string */
+    public String toString() {
+        String toReturn = "";
+        for(Card c : mCards) {
+            toReturn += c.toString();
+        }
+        return toReturn;
+    }
+
 
 }

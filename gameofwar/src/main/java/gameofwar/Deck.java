@@ -1,5 +1,7 @@
 package gameofwar;
 
+import java.util.ArrayList;
+
 public interface Deck {
 
     /* Create the deck of cards */
@@ -16,4 +18,14 @@ public interface Deck {
 
     /* return true if deck is empty */
     public boolean isEmpty();
+    
+    /* return deck size */
+    public int size();
+    
+    /* clear the deck of all cards */
+    public void clear();
+    
+    /* return the entire deck as a string */
+    @Override
+    public String toString();
 }

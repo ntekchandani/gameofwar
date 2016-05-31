@@ -34,4 +34,7 @@ public class WarTests {
         War.main(new String[] {"1","2","3","4"});
     }
     
+    // TODO: the war class should be tested more robustly.  While refactoring it should 
+    // improve testability, there are other ways to overcome its reliance on system in such 
+    // as manually setting the input stream.
 }

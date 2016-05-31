@@ -36,4 +36,14 @@ public class Card {
         mFaceUp = isFaceUp;
     }
     
+    @Override
+    public String toString() {
+        if(mFaceUp) {
+            return "[S:" + mSuit + " R:" + mRank + "]";
+        } else
+        {
+            return "[FACEDOWN]";
+        }
+    }
+    
 }
