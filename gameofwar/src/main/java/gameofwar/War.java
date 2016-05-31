@@ -94,8 +94,8 @@ public class War
       
     private void battle() {
         //begin a battle
-        int topRank = 0;
-        int leadPlayer = 0;
+        int topRank = -1;
+        int leadPlayer = -1;
         boolean needWar = false;
         for(Integer player : mLivePlayers) {
             if(mPlayerDecks.get(player).isEmpty()) {
@@ -111,6 +111,12 @@ public class War
                 needWar = true;
             }
             
+        }
+        
+        if(leadPlayer == -1) {
+            //no one wins!
+            mLivePlayers.clear();
+            return;
         }
         
         if(!needWar) {
@@ -194,7 +200,11 @@ public class War
             
         }
         
-        System.out.println("Player " + mLivePlayers.iterator().next() + " WINS THE GAME!!!");      
+        if(mLivePlayers.size() == 0) {
+            System.out.println("NO ONE WINS!");
+        } else {
+            System.out.println("Player " + mLivePlayers.iterator().next() + " WINS THE GAME!!!");      
+        }
         
     }
 }
