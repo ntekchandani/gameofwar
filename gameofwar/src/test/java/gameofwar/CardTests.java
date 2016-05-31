@@ -7,12 +7,12 @@ import gameofwar.Card;
 
 public class CardTests {
     @Test(expected = IllegalArgumentException.class)
-    public final void whenCardCreatedWithNegativeRankThenExceptionIsThrown() {
+    public final void whenCardCreatedWithNegativeSuitThenExceptionIsThrown() {
         Card testCard = new Card(-1,1);
     }
     
     @Test(expected = IllegalArgumentException.class)
-    public final void whenCardCreatedWithNegativeSuitThenExceptionIsThrown() {
+    public final void whenCardCreatedWithNegativeRankThenExceptionIsThrown() {
         Card testCard = new Card(1,-1);
     }
     
