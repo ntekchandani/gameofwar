@@ -18,4 +18,18 @@ public class QueueDeckTests {
         Deck testDeck = (Deck) new QueueDeck();
         testDeck.create(1,0);
     }
+    
+    // TODO: shuffle should be tested more robustly.  While it is inherently nondeterministic,
+    // there are some ways depending on implementation to test this functionality.
+    // at minimum, should be possible to at least verify deck ordering changed.
+    // Current QueueDeck implementation will remove a card on 'Deal' so a 'Peek' method
+    // or a method to compare Decks could be useful for testing.
+    
+    @Test
+    public final void whenCallingShuffleMethodCallPasses() {
+        Deck testDeck = (Deck) new QueueDeck();
+        testDeck.create(4,13);
+        testDeck.shuffle();
+    }
+    
 }
