@@ -23,4 +23,15 @@ public class WarTests {
         War testWar = new War();
         testWar.play(1,1,1);
     }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public final void whenWarMainMethodCalledWithoutAnyArgumentsThenExceptionIsThrown() {
+        War.main(new String[] {});
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public final void whenWarMainMethodCalledWithTooManyArgumentsThenExceptionIsThrown() {
+        War.main(new String[] {"1","2","3","4"});
+    }
+    
 }
