@@ -54,4 +54,18 @@ public class QueueDeckTests {
         testDeck.add(mockedCard);
     }
     
+    @Test
+    public final void whenDealingAddedCardReturnedInOrder() {
+        Deck testDeck = (Deck) new QueueDeck();
+        testDeck.create(1,1);
+        Card mockedCard = mock(Card.class);
+        testDeck.add(mockedCard);
+        when(mockedCard.getSuit()).thenReturn(10);
+        when(mockedCard.getRank()).thenReturn(11);
+        testDeck.deal();
+        Card testCard = testDeck.deal();
+        Assert.assertEquals(10,testCard.getSuit());
+        Assert.assertEquals(11,testCard.getRank());
+    }
+    
 }
