@@ -1,6 +1,6 @@
 # gameofwar
 
-This is an implementation of the Game of War (card game) as described here:
+This is a Java implementation of the Game of War (card game) as described here:
 http://en.wikipedia.org/wiki/War_(card_game)
 
 # build
