@@ -46,12 +46,19 @@ public class QueueDeck implements Deck {
         }
     }
 
-    /* deal a card from the deck */
+    /* deal a card from the deck 
+       this implementation will deal by removing the Card from the top of the deck */
     public Card deal() {
-        throw new UnsupportedOperationException();
+        if(mCards.isEmpty()) {
+            throw new IllegalStateException("Deck is empty");
+        }
+        Card cardToReturn = mCards.get(0);
+        mCards.remove(0);
+        return cardToReturn;
     }
     
-    /* add a card to the deck */
+    /* add a card to the deck 
+       this implementation will add the Card to the end of the deck */
     public void add(Card cardToAdd) {
         throw new UnsupportedOperationException();
     }

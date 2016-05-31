@@ -19,6 +19,17 @@ public class QueueDeckTests {
         testDeck.create(1,0);
     }
     
+    @Test(expected = IllegalStateException.class)
+    public final void whenDealCalledMoreTimesThanCardsThenExceptionIsThrown() {
+        Deck testDeck = (Deck) new QueueDeck();
+        testDeck.create(4,1);
+        testDeck.deal();
+        testDeck.deal();
+        testDeck.deal();
+        testDeck.deal();
+        testDeck.deal();
+    }
+    
     // TODO: shuffle should be tested more robustly.  While it is inherently nondeterministic,
     // there are some ways depending on implementation to test this functionality.
     // at minimum, should be possible to at least verify deck ordering changed.
